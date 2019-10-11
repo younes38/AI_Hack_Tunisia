@@ -1,5 +1,5 @@
 # AI_Hack_Tunisia
-my models for the AI hackathon in Tunisia
+my models for the AI hackathon in Tunisia.
 
 ## 1 - Pre-qualificaton :
 Create a machine learning model to predict which individuals are most likely to have or use a bank account.  
