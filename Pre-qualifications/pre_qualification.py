@@ -16,7 +16,6 @@ df = pd.read_csv("Train_v2.csv")
 #columns to be considered 
 cols =['age_of_respondent','education_level','cellphone_access','job_type','location_type', 'relationship_with_head']
 
-
 def to_nb(df): #convert strings to numbers    
     def cv2(s):
         if s == "Yes" :
@@ -53,8 +52,6 @@ x_train = scaler.transform(x_train)
 x_test = scaler.transform(x_test)
 df["age_of_respondent"].apply(np.log)
 df["household_size"].apply(np.log)
-
-
 
 clf = RandomForestClassifier(n_estimators = 1000, n_jobs = -1, max_depth = 10, min_samples_split = 200)
 clf = clf.fit(x_train, y_train)
