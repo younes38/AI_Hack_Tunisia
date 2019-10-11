@@ -6,7 +6,7 @@ Create a machine learning model to predict which individuals are most likely to 
 > you can find more information about the problem [here](https://zindi.africa/competitions/financial-inclusion-in-africa).  
 > For the train and test data [here](https://zindi.africa/competitions/financial-inclusion-in-africa/data).  
 
-## 2 - Delay Prediction Tunisair :
+## 2 - Flight Delay Problem :
 Build a flight delay predictive model using Machine Learning techniques.  
 > you can find more information about the problem [here](https://zindi.africa/competitions/ai-tunisia-hack-5-predictive-analytics-challenge-2).  
 > For the train and test data [here](https://zindi.africa/competitions/ai-tunisia-hack-5-predictive-analytics-challenge-2/data).  
