@@ -41,7 +41,6 @@ l_id = preprocessing.LabelEncoder()
 ID = pd.concat([df["FLTID"], df2["FLTID"]], ignore_index=True)
 l_id.fit(ID)
 
-
 def process_data(df):
     features = df[cols]
     #Label Encoding
@@ -54,7 +53,6 @@ def process_data(df):
     def encode_date(date):
         a = list(date.split('-'))
         return (int(a[1]) - 1) * 31 + int(a[2])
-    
     def encode_date_year(date):
         a = list(date.split('-'))
         return int(a[0]) - 2015
@@ -66,60 +64,46 @@ def process_data(df):
         A = list(date.split(' '))
         a = list(A[0].split('-'))
         b = list(A[1].split(':'))
-
         return int(a[0]) - 2015
     
     def encode_time_std_day(date):
         A = list(date.split(' '))
         a = list(A[0].split('-'))
         b = list(A[1].split(':'))
-
         return (int(a[1]) - 1) * 31 + int(a[2])
     
     def encode_time_std_time(date):
         A = list(date.split(' '))
         a = list(A[0].split('-'))
         b = list(A[1].split(':'))
-
         return int(b[0]) * 60 + int(b[1])
-    
-    
-    
-    
-    
     
     def encode_time_sta_year(date):
         A = list(date.split(' '))
         a = list(A[0].split('-'))
         b = list(A[1].split('.'))
-
         return int(a[0]) - 2015
     
     def encode_time_sta_day(date):
         A = list(date.split(' '))
         a = list(A[0].split('-'))
         b = list(A[1].split('.'))
-
         return (int(a[1]) - 1) * 31 + int(a[2])
     
     def encode_time_sta_time(date):
         A = list(date.split(' '))
         a = list(A[0].split('-'))
         b = list(A[1].split('.'))
-
         return int(b[0]) * 60 + int(b[1])
     
     features["a3"] = features["STD"].map(encode_time_std_time)
     features["b3"] = features["STA"].map(encode_time_sta_time)
     features.drop(columns =["STD", "STA", "DATOP"], inplace = True) 
-    
-
     #scale data
     scaler = StandardScaler()
     scaler.fit(features)
     features = scaler.transform(features)
 
-    
     return features
 
 ftrs = process_data(df)
